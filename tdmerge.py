@@ -64,6 +64,6 @@ def mergeSort(input_array):
 
 
 
-input_array = [6,4,5,3,2,1]
+input_array = [6,4,5,3,2,1,7]
 mergeSort(input_array)
 print(input_array)

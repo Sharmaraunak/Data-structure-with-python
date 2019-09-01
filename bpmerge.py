@@ -24,8 +24,8 @@ def merge(input_array,start,mid,end):
     arr = []
     i,j = start,mid+1
     
-    while(i<=mid+1 and j<= end):
-        if(input_array[i]<= input_array[j]):
+    while(i<=mid and j<= end):
+        if(input_array[i]< input_array[j]):
             arr.append(input_array[i])
             i+=1
         else:
@@ -47,7 +47,16 @@ def merge(input_array,start,mid,end):
 
 def sort(input_array,start,end):
 
-    /**logic to be implemented*//
+    n = len(input_array)
+    length = 1
+    while length < n:
+        low = 0
+        while low < n-length:
+            mid = int((low+length)-1)
+            end = min(low+2*length-1,n-1) 
+            merge(input_array,low,mid,end)
+            low += 2*length
+        length *=2
 
 
 #mergeSort function
@@ -58,6 +67,6 @@ def mergeSort(input_array):
 
 
 
-input_array = [6,4,5,3,2,1]
+input_array = [6,4,5,3,2,1,7]
 mergeSort(input_array)
 print(input_array)
